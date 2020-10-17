@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mastermind</title>
+        <meta charset="utf-8"/>
+        <link rel="shortcut icon" type="image/x-icon" href="../Images/chateau.png"/>
+        <style type="text/css">
+           body{
+            background-color: #000000;
+            
+           }
+
+           footer{
+            margin-top: 10px;
+            background-color: #686E66;
+           }
+
+           h1{
+            color: white;
+           }
+
+            #back{
+                margin-left: 25%;
+                background-color: #B2B8B0;
+                border: solid grey 5px;
+                height: 700px;
+                width: 270px;
+               
+
+            }
+
+            .ligne{
+                border: solid black 2px;
+                border-radius: 20px;
+                background-color: #6C6E6C;
+                height: 45px;
+                width: 250px;
+                margin: 5px;
+                display: flex;
+
+            }
+
+            .couleur{
+                width: 30px;
+                height: 30px;
+                border: solid black 2px;
+                border-radius: 50%;
+                background-color : #DEE0DE ;
+                margin: 5px;
+            }
+
+            .aide{
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                border: solid grey 1px;
+                margin: 2px;
+            }
+
+            .cadre{
+                width: 20px;
+                height: 20px;
+                padding: 2px;
+            }
+
+            input{
+                border-radius: 10%;
+                background-color: #535752;
+                color: white;
+                margin-left:20px;
+            }
+
+            #cadre2{
+
+                height: 45px;
+                width: 250px;
+                margin: 5px;
+                display: flex;
+            }
+
+            .select{
+                border:solid white 3px;
+                border-radius: 50%;
+                background-color: black;
+                width: 30px;
+                height: 30px;
+                margin: 5px;
+            }
+
+
+    	</style>
+	</head>
+
+	<body>
+
+        <header>
+            <h1>Mastermind</h1> 
+        </header>
+
+       
+
+            <script type="text/javascript">
+
+                       /*     var couleurDeBase =[];
+                    ValRandom = (Math.round(Math.random()*4))+1;
+                for (i=0; i<=8; i++) {
+                    while (couleurDeBase.includes(ValRandom)) {
+                        ValRandom = (Math.round(Math.random()*4))+1;
+                    } 
+                        couleurDeBase[i]= ValRandom;
+                        console.table(couleurDeBase);
+
+                    }*/
+                        //ici on génère le fond
+                document.write("<div id='back'>");
+                        //toutes les lignes du jeu
+                    for (var i = 0; i<= 11;i++) {
+            
+                    document.write("<div id='ligne" + i +"' class='ligne'>");
+                    
+                        //les quatre div couleur par ligne 
+                        for (var j = 0; j<= 3;j++) {
+            
+                        document.write("<div id='couleur" + j +"' class='couleur'>");
+
+                        document.write("</div>");
+
+                        
+                        
+                            }
+                            document.write("<div class='cadre'>");
+                                //les petites aides de jeu
+                            for (var k = 0; k<= 3;k++) {
+
+            
+                        document.write("<div id='aide" + k +"' class='aide'>");
+
+                        document.write("</div>");
+                    
+                    }
+                        
+
+                    document.write("</div>");
+                            
+                        
+                    document.write("</div>");
+                }
+                        //enfin on place les div qui permettront de choisir des couleurs
+                        document.write("<div id='cadre2'>");
+                                for (var l = 0; l<= 3;l++) {
+                    
+                                document.write("<div id='select" + l +"' class='select' onclick='ChoixCouleur"+l+"'>");
+
+                                document.write("</div>");
+                            }
+                            //ici on déclare le bouton pour soumettre sa proposition
+                        document.write("<input type='button' id='go "+ i + "' value='go' >");
+                        document.write("</input>");
+
+                        document.write("</div>");
+                
+                document.write("</div>");
+
+                function ChoixCouleur0(){
+                  var  couleur1 = document.getElementById('select0').style.backgoudColor;
+                    couleur1 = 'red';
+
+                }
+
+            </script>
+
+
+
+        <footer>
+            <p>Ce site à été réalisé par Hugo Eitel </p>
+            <p>h.eiltel@ludus-academie.com</p>
+
+             
+        </footer>
+    </body>
+</html>
